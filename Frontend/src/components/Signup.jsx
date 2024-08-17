@@ -5,6 +5,7 @@ import axios from "axios";
 import toast from "react-hot-toast";
 
 const Signup = () => {
+      const BASE_URL="https://bookstore-uubo.onrender.com"
   const location = useLocation();
 
   const navigate=useNavigate();
@@ -23,7 +24,7 @@ const Signup = () => {
     };
 
     await axios
-      .post("http://localhost:4001/user/signup", userInfo)
+      .post(`${BASE_URL}/signup`, userInfo)
       .then((res) => {
         console.log(res.data);
         if (res.data) {

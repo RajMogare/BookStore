@@ -10,9 +10,10 @@ const Freebook = () => {
   const [book, setBook] = useState([]);
 
   useEffect(() => {
+        const BASE_URL="https://bookstore-uubo.onrender.com"
     const getBook = async () => {
       try {
-        const res = await axios.get("http://localhost:4001/book");
+        const res = await axios.get(`${BASE_URL}/book`);
         const data=res.data.filter((data) => data.category === "Free");
         console.log(data);
         setBook(data);

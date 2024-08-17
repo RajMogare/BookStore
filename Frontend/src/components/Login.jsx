@@ -5,6 +5,7 @@ import axios from "axios";
 import toast from "react-hot-toast";
 
 const Login = () => {
+  const BASE_URL = "https://bookstore-uubo.onrender.com";
   const {
     register,
     handleSubmit,
@@ -18,7 +19,7 @@ const Login = () => {
     };
 
     await axios
-      .post("http://localhost:4001/user/login", userInfo)
+      .post(`${BASE_URL}/login`, userInfo)
       .then((res) => {
         console.log(res.data);
         if (res.data) {
@@ -38,7 +39,7 @@ const Login = () => {
         toast.error(
           "Error: " + (err.response ? err.response.data.message : err.message)
         );
-        setTimeout(()=>{},2000)
+        setTimeout(() => {}, 2000);
       });
   };
 

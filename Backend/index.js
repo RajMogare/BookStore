@@ -12,7 +12,7 @@ app.use(express.json())
 dotenv.config();
 
 const port = process.env.PORT || 4000;
-const URI = process.env.MONGO_URI_ATLAS;
+const URI = process.env.MONGO_URI;
 
 // connect to mongodb
 
@@ -29,7 +29,7 @@ try {
 // defining router
 
 app.use("/book",bookRoute);
-app.use("/user",userRoute);
+app.use("/",userRoute);
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
 });
