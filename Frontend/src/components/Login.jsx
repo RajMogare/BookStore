@@ -5,7 +5,8 @@ import axios from "axios";
 import toast from "react-hot-toast";
 
 const Login = () => {
-  const BASE_URL = "https://bookstore-uubo.onrender.com";
+  // const BASE_URL = "https://bookstore-uubo.onrender.com";
+  // const BASE_URL="http://localhost:4001"
   const {
     register,
     handleSubmit,
@@ -19,7 +20,7 @@ const Login = () => {
     };
 
     await axios
-      .post(`${BASE_URL}/login`, userInfo)
+      .post(`${BASE_URL}/user/login`, userInfo)
       .then((res) => {
         console.log(res.data);
         if (res.data) {
